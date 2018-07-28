@@ -38,11 +38,11 @@ public class EmployeeController {
 		/*List<Designation> list=employeeDao.getAlldesignation();
 		model.addAttribute("list",list);*/
 		
-		List<Employee> elist=employeeDao.getAllemployee();
-		model.addAttribute("elist",elist);
-		//ap<Integer,String> desgMap=employeeDao.getDesignationMap();
+		List<Employee> list=employeeDao.getAllemployee();
+		model.addAttribute("list",list);
+		/*Map<Integer,String> desgMap=employeeDao.getDesignationMap();*/
 		
-		
+		System.out.println(list);
 		return "employee";
 		
 		
@@ -88,8 +88,9 @@ public class EmployeeController {
 		model.addAttribute("empbean" ,employee);
 		
 		List<Employee> list=employeeDao.getAllemployee();
-		model.addAttribute("list",list);
+		model.addAttribute("roles",employeeDao.getDesignationMap());
 		
+		model.addAttribute("list",list);
 		
 		return "employee";
 		

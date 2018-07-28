@@ -199,7 +199,7 @@ th {
 <script type='text/javascript' src='/JS/jquery-1.11.1.min.js'></script>
 
 <script type='text/javascript' src='JS/customValidation.js'></script>
-//---- scripts for date picker---
+<!--  scripts for datepicker -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
