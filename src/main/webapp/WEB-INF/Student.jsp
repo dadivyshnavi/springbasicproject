@@ -12,6 +12,14 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
+
+<script>
+window.setTimeout(function() {
+    $(".msgcss").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 5000);
+</script>
 <style>           
 .blue-button{
 	background: #25A6E1;
@@ -40,6 +48,18 @@ th {
                 padding: 5px 10px;
             }
 </style>
+
+<c:if test="${not empty msg}">
+		<div class="msgcss row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<div class="form-group">
+					<div class="alert alert-${cssMsg} fadeIn animated">${msg}</div>
+				</div>
+			</div>
+		</div>
+	</c:if>
+
+
 <body>
 <form:form method="post" modelAttribute="stubean" action="${pageContext.request.contextPath}/stu">
 <table>

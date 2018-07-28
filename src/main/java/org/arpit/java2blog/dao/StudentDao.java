@@ -100,7 +100,26 @@ public class StudentDao {
 		return list.get(0);
 		}
 	}
+public boolean checkUserExistsOrNot(Student student)
 	
+	{
+		String hql="from Student where phno="+student.getPhno();
+		Session session=this.sessionfactory.getCurrentSession();
+		Query query=session.createQuery(hql);
+		
+		List<Student> list= query.list();
+		if(list.size()>0)
+		{
+			return true;
+		}
+			
+		else
+		{
+			return false;
+		}
+		
+	}
+
 	
 
 public List<Course> getAllCourse(){
@@ -132,4 +151,3 @@ public List<Course> getAllCourse(){
 }
 	
 }
-	
